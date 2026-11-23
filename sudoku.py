@@ -1,3 +1,5 @@
+import curses # used for capturing keyboard input 
+
 answer_game_board = [[8,7,1,2,9,6,3,4,5], 
                     [3,4,9,5,8,1,7,2,6], 
                     [2,5,6,7,4,3,8,9,1],
