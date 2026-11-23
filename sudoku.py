@@ -8,17 +8,9 @@ answer_game_board = [[8,7,1,2,9,6,3,4,5],
                     # bottom rows
                     [1,3,2,8,6,5,4,7,9], 
                     [5,9,8,3,7,4,1,6,2], 
-                    [7,6,4,1,2,8,5,3,8]]
+                    [7,6,4,1,2,9,5,3,8]]
 
-player_game_board = [[0,0,0,0,0,0,0,0,0], 
-                    [0,0,0,0,0,0,0,0,0], 
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0], 
-                    [0,0,0,0,0,0,0,0,0], 
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0,0], 
-                    [0,0,0,0,0,0,0,0,0]]
+player_game_board = [[0 for _ in range(9)] for _ in range(9)]
 
 def set_up_game_board(answer_game_board, player_game_board):
     for i in range(len(answer_game_board)):
