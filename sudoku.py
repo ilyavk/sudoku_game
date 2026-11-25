@@ -1,5 +1,6 @@
 import curses # used for capturing keyboard input 
 
+# update this later with a puzzle generator
 answer_game_board = [[8,7,1,2,9,6,3,4,5], 
                     [3,4,9,5,8,1,7,2,6], 
                     [2,5,6,7,4,3,8,9,1],
@@ -14,12 +15,15 @@ answer_game_board = [[8,7,1,2,9,6,3,4,5],
 
 player_game_board = [[0 for _ in range(9)] for _ in range(9)]
 
-def set_up_game_board(answer_game_board, player_game_board):
-    for i in range(len(answer_game_board)):
-        for j in range(len(answer_game_board[i])):
-            if (i+j) % 2 == 0:  # change this to adjust the number of pre-filled cells
-                player_game_board[i][j] = answer_game_board[i][j]
-    return player_game_board
+fixed_cells = [[False for _ in range (9)] for _ in range(9)]
+
+def set_up_game_board(answer_board, player_board):
+    for i in range(9):
+        for j in range(9):
+            if (i + j) % 2 == 0: # change this to adjust the number of pre-filled cells
+                player_board[i][j] = answer_board[i][j]
+                fixed_cells[i][j] = True
+    return player_board
 
 def display_game_board(game_board):
     print("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _")
@@ -36,3 +40,4 @@ def display_game_board(game_board):
 player_game_board = set_up_game_board(answer_game_board, player_game_board)
 # loop here to allow the player to make moves and check for win condition
 display_game_board(player_game_board)
+print(fixed_cells)
